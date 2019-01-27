@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour {
 
     public void EndGame() {
         Analyser.s1f = true;
+        SaveSystem.SaveData(Analyser.s1f, Analyser.s2f, Analyser.s3f, Analyser.s4f, Analyser.s5f);
         endScreen.SetActive(true);
     }
 

@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[System.Serializable]
 public static class Analyser {
 
-    public static bool s1f, s2f, s3f, s4f, s5f;
+    public static bool s1f = false, s2f = false, s3f = false, s4f = false, s5f = false;
 
     public static Image i1, i2, i3, i4;
     public static UIStatistics ui;
@@ -22,50 +23,38 @@ public static class Analyser {
 
     public static void AddCoDivice() {
         coDivices++;
-        if (ui != null) {
-            ui.CoDivices();
-        }
-        goals.Refresh();
+        if (ui != null) ui.CoDivices();
+        if (goals != null) goals.Refresh();
 
         if (coDivices == 25) {
-            i1.gameObject.SetActive(true);
-            if (antennas >= 5) {
-                gm.EndGame();
-            }
+            if (i1 != null) i1.gameObject.SetActive(true);
+            if (antennas >= 5) gm.EndGame();
         }
     }
 
     public static void LoseCoDivice() {
         coDivices--;
-        goals.Refresh();
+        if (goals != null) goals.Refresh();
     }
 
     public static void AddAntena() {
         antennas++;
-        if (ui != null) {
-            ui.Antennas();
-        }
-        goals.Refresh();
+        if (ui != null) ui.Antennas();
+        if (goals != null) goals.Refresh();
 
         if (antennas == 5) {
-            i2.gameObject.SetActive(true);
-            if (antennas >= 25) {
-                gm.EndGame();
-            }
+            if (i2 != null) i2.gameObject.SetActive(true);
+            if (antennas >= 25) gm.EndGame();
         }
     }
 
     public static void AddDivice() {
         divices++;
-        if (ui != null) {
-            ui.Divices();
-        }
+        if (ui != null) ui.Divices();
     }
 
     public static void Money() {
-        if (ui != null) {
-            ui.Money();
-        }
+        if (ui != null) ui.Money();
     }
 
 }

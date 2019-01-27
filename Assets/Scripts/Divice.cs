@@ -6,9 +6,9 @@ public class Divice : MonoBehaviour {
 
     private Mover mover;
 
-    private void Awake() {
-        mover = GetComponent<Mover>();
+    private void Start() {
         Analyser.AddDivice();
+        mover = GetComponent<Mover>();
     }
 
     public void Orbit(Transform t, float d) {
