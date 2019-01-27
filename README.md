@@ -1,4 +1,4 @@
 # 5Game
 Game about 5G internet
 
-Aby prawidłowo pobrać projekt należy utworzyć nowy projekt unity 2D, a następnie sklonować powyższe repozytorium do miejsca w którym znajduje się stworzony projekt unity.
+Aby prawidłowo pobrać projekt należy sklonować repozytorium do lokacji własnej, a następnie za pomocą Unity otworzć znajdujący się w repozytorium folder 5Game.
